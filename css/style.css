@@ -1,0 +1,221 @@
+
+:root{
+    --page-bg: #657cca;
+    --card-bg: #ffffff;
+    --accent: #d35400;
+    --text-dark: #222;
+    --muted: #0a24ca;
+    --header-bg: #020c40;
+}
+
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--page-bg);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+
+header {
+    background-color: var(--header-bg);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/*  home.html */
+.container{
+    max-width: 1100px;   /* keeps content centered and aligned */
+    margin: 24px auto;
+    display: flex;
+    gap: 24px;           /* space between sidebar and main content */
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+.sidebar {
+    flex: 0 0 300px;     /* fixed base width, doesn't grow */
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar h2 {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar img {
+    display: block;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 16px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.main-content {
+    flex: 1 1 auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.main-content h1 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+.main-content h2 {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-top: 20px;
+}
+.main-content p, .main-content ul {
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.main-content ul {
+    padding-left: 20px;
+}
+
+.hobbies-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.hobby {
+    text-align: center;
+    width: 220px;
+}
+
+.hobby img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.25s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.hobby img:hover {
+    transform: scale(1.05);
+}
+
+.hobby p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.contact-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 22px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.contact-container h2 {
+    text-align: center;
+    color: var(--text-dark);
+    margin-top: 0;
+}
+
+.contact-container p {
+    text-align: center;
+    color: var(--muted);
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 18px;
+}
+
+.contact-list li {
+    margin: 10px 0;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.contact-list a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    text-align: center;
+    background-color: var(--header-bg);
+    color: white;
+    padding: 12px;
+    margin-top: 24px;
+}
+
+
+@media screen and (max-width: 980px) {
+    .container { padding: 16px; gap: 16px; }
+    .sidebar { flex-basis: 260px; }
+}
+
+@media screen and (max-width: 760px) {
+    /* stack sidebar and main content */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar {
+        width: 100%;
+        max-width: 420px;
+        order: 0;
+    }
+    .sidebar img { width: 180px; height: 180px; }
+    .main-content {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    /* hobbies adapt */
+    .hobby { width: 90%; max-width: 420px; }
+    .hobby img { width: 100%; height: auto; }
+}
